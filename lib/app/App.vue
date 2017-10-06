@@ -22,8 +22,8 @@ layoutsKeys.forEach(function (key, i) { %>
 <% }) %>
 }
 
-// console.log('App.vue')
-// console.log(process.env)
+console.log('App.vue')
+console.log(process.env.APP_ID)
 let resolvedLayouts = {}
 
 export default {
@@ -34,6 +34,8 @@ export default {
     appId: `${process.env.APP_ID}`
   }),
   beforeCreate () {
+    console.log('App.vue befor create')
+    console.log(this.$options._nuxt)
     Vue.util.defineReactive(this, 'nuxt', this.$options._nuxt)
   },
   created () {
