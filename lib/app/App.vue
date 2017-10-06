@@ -22,7 +22,8 @@ layoutsKeys.forEach(function (key, i) { %>
 <% }) %>
 }
 
-const appId = process.env.APP_ID
+console.log('App.vue')
+console.log(process.env)
 let resolvedLayouts = {}
 
 export default {
@@ -30,7 +31,7 @@ export default {
   data: () => ({
     layout: null,
     layoutName: '',
-    appId
+    appId: '__nuxt'
   }),
   beforeCreate () {
     Vue.util.defineReactive(this, 'nuxt', this.$options._nuxt)
@@ -86,6 +87,9 @@ export default {
           return this.$nuxt.error({ statusCode: 500, message: e.message })
         }
       })
+    },
+    setAppId(appId) {
+      this.appId = appId
     }
   },
   components: {
