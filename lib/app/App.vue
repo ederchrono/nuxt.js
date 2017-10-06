@@ -22,8 +22,6 @@ layoutsKeys.forEach(function (key, i) { %>
 <% }) %>
 }
 
-console.log('App.vue')
-console.log(process.env.APP_ID)
 let resolvedLayouts = {}
 
 export default {
