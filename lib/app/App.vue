@@ -31,7 +31,7 @@ export default {
   data: () => ({
     layout: null,
     layoutName: '',
-    appId: `${process.env.APP_ID}`
+    appId: process.env.APP_ID
   }),
   beforeCreate () {
     console.log('App.vue befor create')
