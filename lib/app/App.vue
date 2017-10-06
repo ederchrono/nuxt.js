@@ -1,5 +1,5 @@
 <template>
-  <div id="__nuxt">
+  <div :id="process.env.APP_ID">
     <% if (loading) { %><nuxt-loading ref="loading"></nuxt-loading><% } %>
     <% if (layoutTransition) { %><transition name="<%= layoutTransition.name %>" mode="<%= layoutTransition.mode %>"><% } %>
       <component v-if="layout" :is="nuxt.err ? 'nuxt' : layout" :key="layoutName"></component>
