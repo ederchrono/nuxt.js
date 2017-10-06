@@ -1,5 +1,5 @@
 <template>
-  <div :id="process.env.APP_ID">
+  <div :id="appId">
     <% if (loading) { %><nuxt-loading ref="loading"></nuxt-loading><% } %>
     <% if (layoutTransition) { %><transition name="<%= layoutTransition.name %>" mode="<%= layoutTransition.mode %>"><% } %>
       <component v-if="layout" :is="nuxt.err ? 'nuxt' : layout" :key="layoutName"></component>
@@ -22,13 +22,15 @@ layoutsKeys.forEach(function (key, i) { %>
 <% }) %>
 }
 
+const appId = process.env.APP_ID
 let resolvedLayouts = {}
 
 export default {
   head: <%= JSON.stringify(head) %>,
   data: () => ({
     layout: null,
-    layoutName: ''
+    layoutName: '',
+    appId
   }),
   beforeCreate () {
     Vue.util.defineReactive(this, 'nuxt', this.$options._nuxt)
