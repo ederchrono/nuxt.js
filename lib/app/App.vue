@@ -34,8 +34,6 @@ export default {
     appId: process.env.APP_ID
   }),
   beforeCreate () {
-    console.log('App.vue befor create')
-    console.log(this.$options._nuxt)
     Vue.util.defineReactive(this, 'nuxt', this.$options._nuxt)
   },
   created () {
