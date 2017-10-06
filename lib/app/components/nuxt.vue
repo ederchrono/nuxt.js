@@ -1,5 +1,5 @@
 <template>
-  <div class="nuxt">
+  <div>
     <nuxt-error v-if="nuxt.err" :error="nuxt.err"></nuxt-error>
     <nuxt-child :key="routerViewKey" v-else></nuxt-child>
   </div>
