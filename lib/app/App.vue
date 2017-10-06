@@ -31,7 +31,7 @@ export default {
   data: () => ({
     layout: null,
     layoutName: '',
-    appId: '__nuxt'
+    appId: process.env.APP_ID
   }),
   beforeCreate () {
     Vue.util.defineReactive(this, 'nuxt', this.$options._nuxt)
@@ -89,6 +89,8 @@ export default {
       })
     },
     setAppId(appId) {
+      console.log('setAppId')
+      console.log(appId)
       this.appId = appId
     }
   },
